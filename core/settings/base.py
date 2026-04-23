@@ -62,23 +62,23 @@ WSGI_APPLICATION = "core.wsgi.application"
 # ------------------------------------------------------
 # DATABASE (ENV-based)
 # ------------------------------------------------------
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'shop_api',
-#         'USER': 'shop',
-#         'PASSWORD': 'SjhdE#dse392dQW',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'shop_api',
+        'USER': 'shop',
+        'PASSWORD': 'SjhdE#dse392dQW',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # ------------------------------------------------------
