@@ -1,14 +1,15 @@
 import os
 from pathlib import Path
 from datetime import timedelta
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # ------------------------------------------------------
 # BASIC CONFIG
 # ------------------------------------------------------
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-secret-key")
-DEBUG = True 
+SECRET_KEY = config("SECRET_KEY")
+DEBUG = config("DEBUG", cast=bool) 
 ALLOWED_HOSTS = ["*"] 
 
 # ------------------------------------------------------
@@ -63,22 +64,19 @@ WSGI_APPLICATION = "core.wsgi.application"
 # DATABASE (ENV-based)
 # ------------------------------------------------------
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shop_api',
-        'USER': 'shop',
-        'PASSWORD': 'SjhdE#dse392dQW',
-        'HOST': 'localhost',
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("POSTGRES_DB"),
+        "USER": config("POSTGRES_USER"),
+        "PASSWORD": config("POSTGRES_PASSWORD"),
+        "HOST": config("POSTGRES_HOST"),
+        "PORT": config("POSTGRES_PORT"),
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+VANDAR_API_KEY = config("VANDAR_API_KEY")
+VANDAR_BASE_URL = config("VANDAR_BASE_URL")
+VANDAR_CALLBACK_URL = config("VANDAR_CALLBACK_URL")
 
 
 # ------------------------------------------------------

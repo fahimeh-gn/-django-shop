@@ -15,7 +15,7 @@ from rest_framework.permissions import IsAuthenticated
 class OrderViewSet(viewsets.ModelViewSet):
 
     permission_classes = [IsAuthenticated]
-    http_method_names = ["get", "post", "patch"]
+    http_method_names = ["get", "post"]
 
     serializer_class = OrderSerializer
 
