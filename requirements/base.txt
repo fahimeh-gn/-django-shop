@@ -2,3 +2,13 @@ Django
 psycopg2-binary
 python-decouple
 requests
+djangorestframework
+djangorestframework-simplejwt
+django-filter
+drf_spectacular
+drf_spectacular_sidecar
+psycopg2-binary
+Pillow
+requests
+PyJWT
+python-dotenv
