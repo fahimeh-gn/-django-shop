@@ -38,6 +38,9 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def is_status(self, status):
+        return self.status == status
+
     def __str__(self):
         return f"Order #{self.id}"
 
